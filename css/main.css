@@ -1,3 +1,10 @@
+:root {
+  --DarkGrayishMagenta: hsl(303, 10%, 53%);
+  --LightGrayishMagenta: hsl(300, 24%, 96%);
+  --White: hsl(0, 0%, 100%);
+  --VeryDarkMagenta: hsl(300, 43%, 22%);
+  --SoftPink: hsl(333, 80%, 67%);
+}
 * {
 	padding: 0;
 	margin: 0;
@@ -5,150 +12,165 @@
 }
 body {
 	font-family: 'League Spartan', sans-serif;
-	min-height: 100vh;
-	display: grid;
-	place-items: center;
-	margin: 3em 1.5em;
-}
-@media (width: 375px) {
-	body {
-		display: block;
-	}
-}
-main {
-	padding: 5em;
 	background-image: 
-										url(../images/bg-pattern-top-desktop.svg),
-										url(../images/bg-pattern-bottom-desktop.svg);
+		url(../images/bg-pattern-top-mobile.svg),
+		url(../images/bg-pattern-bottom-mobile.svg);
 	background-repeat: no-repeat;
 	background-position: top left, bottom right;
 }
-@media (width: 375px) {
-	main {
-		padding: 0;
-		background-image: 
-											url(../images/bg-pattern-top-mobile.svg),
-											url(../images/bg-pattern-bottom-mobile.svg);
-		padding: 1.5em;
-		margin-bottom: .5em;
-	}
-}
-main .heading {
-	display: grid;
-	grid-template-columns: repeat(2, 1fr);
-	gap: 10em;
-}
-@media (width: 375px) {
-	main .heading {
-    grid-template-columns: none;
-    gap: 2em;
-	}
-}
-@media (width: 375px) {
-	main .heading .info {
-		text-align: center;
-		width: 100%;
-	}
+main {
+	padding: 1.5em;
 }
 main .heading .info h1 {
-	color: hsl(300, 43%, 22%);
-	font-size: 3.5em;
-	line-height: .8em;
-	margin-bottom: .7em;
-}
-@media (width: 375px) {
-	main .heading .info h1 {
-		font-size: 2.7em;
-	}
+	font-size: 2.3em;
+	text-align: center;
+	color: var(--VeryDarkMagenta);
+	line-height: 1;
+	margin-bottom: 1em;
 }
 main .heading .info p {
-	color: hsl(303, 10%, 53%);
+	text-align: center;
+	color: var(--DarkGrayishMagenta);
 	font-weight: 500;
-	line-height: 1.2em;
-	font-size: 1.2em;
+	line-height: 1.5;
+	margin-bottom: 1.8em;
 }
 main .heading .rating {
-	display: flex;
-	flex-direction: column;
-	align-items: flex-end;
-	gap: 1.5em;
+	margin-bottom: 1.5em;
 }
 main .heading .rating .rate {
-	display: flex;
-	align-items: center;
-	gap: 2.5em;
-	background-color: hsl(300, 24%, 96%);
-	padding: 1em 2em;
-	width: 26em;
+	background-color: var(--LightGrayishMagenta);
 	border-radius: .6em;
-}
-@media (width: 375px) {
-	main .heading .rating .rate {
-		width: 18em;
-    flex-direction: column;
-    gap: .5em;
-	}
-}
-main .heading .rating .rate:first-child {
-	align-self: flex-start;
-}
-main .heading .rating .rate:nth-child(2) {
-	align-self: center;
-}
-@media (width: 375px) {
-	main .heading .rating .rate:first-child,
-	main .heading .rating .rate:nth-child(2) {
-		align-self: auto;
-	}
+	margin-bottom: .5em;
+	padding: 1em;
+	text-align: center;
 }
 main .heading .rating .rate p {
+	margin-top: .4em;
 	font-weight: bold;
-	color: hsl(300, 43%, 22%)
+	color: var(--VeryDarkMagenta);
 }
-main .testi {
-	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(25em, 1fr));
-	gap: 2.5em;
-	margin-top: 5em;
+main .testimonials {
+	
 }
-@media (width: 375px) {
-	main .testi {
-		grid-template-columns: none;
-	}
-}
-main .testi .review {
-	background-color: hsl(300, 43%, 22%);
-	padding: 2em;
+main .testimonials .review {
+	background-color: var(--VeryDarkMagenta);
+	color: var(--White);
+	padding: 1.5em;
+	margin-bottom: .5em;
 	border-radius: .6em;
-	color: hsl(0, 0%, 100%);
 }
-main .testi .review .person {
+main .testimonials .review .person {
 	display: flex;
 	align-items: center;
-	gap: 1.5em;
+	gap: 1em;
+	margin-bottom: 1.2em;
+
 }
-main .testi .review .person img {
-	width: 3em;
+main .testimonials .review .person img {
 	border-radius: 50%;
+	width: 2.5em;
 }
-main .testi .review .person .text {
+main .testimonials .review .person .text .name {
 	font-weight: bold;
+	margin-bottom: .2em;
 }
-main .testi .review .person .text .status {
-	color: hsl(333, 80%, 67%);
-	margin-top: .3em;
+main .testimonials .review .person .text .status {
+	color: var(--SoftPink);
 }
-main .testi .review q {
-	display: block;
-	margin-top: 2em;
-	line-height: 1.3em;
+main .testimonials .review q {
+	line-height: 1.4;
+	font-size: 1.1em;
 }
 .attribution {
-	font-size: 11px;
 	text-align: center;
 }
 .attribution a {
 	font-weight: bold;
-	color: hsl(300, 43%, 22%);
 	text-decoration: none;
+	color: var(--VeryDarkMagenta);
+}
+@media (min-width: 900px) {
+	body {
+		min-height: 100vh;
+		background-image: 
+			url(../images/bg-pattern-top-desktop.svg),
+			url(../images/bg-pattern-bottom-desktop.svg);
+		background-repeat: no-repeat;
+		min-height: 100vh;
+		display: grid;
+		place-items: center;
+	}
+	main {
+		width: 75em;
+		margin: auto;
+	}
+	main .heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+	}
+	main .heading .info {
+		margin-left: 1.2em;
+	}
+	main .heading .info h1 {
+		width: 45%;
+		font-size: 3em;
+		text-align: left;
+		margin-bottom: .5em;
+	}
+	main .heading .info p {
+		width: 45%;
+		text-align: left;
+	}
+	main .heading .rating {
+		display: flex;
+		flex-direction: column;
+		width: 30.5em;
+	}
+	main .heading .rating .rate {
+    display: flex;
+    gap: 2em;
+		justify-content: space-between;
+	}
+	main .heading .rating .rate:first-child {
+		transform: translateX(-20%);
+		-webkit-transform: translateX(-20%);
+		-moz-transform: translateX(-20%);
+		-ms-transform: translateX(-20%);
+		-o-transform: translateX(-20%);
+}
+main .heading .rating .rate:nth-child(2) {
+	transform: translateX(-10%);
+	-webkit-transform: translateX(-10%);
+	-moz-transform: translateX(-10%);
+	-ms-transform: translateX(-10%);
+	-o-transform: translateX(-10%);
+}
+	main .heading .rating .rate .stars {
+    display: flex;
+    align-items: center;
+    gap: .3em;
+		margin-left: 1em;
+	}
+	main .testimonials {
+    display: grid;
+    grid-template-columns: repeat(3, 350px);
+    justify-content: space-between;
+		margin-top: 2em;
+	}
+	main .testimonials .review:first-child {
+		transform: translateY(-20%);
+		-webkit-transform: translateY(-20%);
+		-moz-transform: translateY(-20%);
+		-ms-transform: translateY(-20%);
+		-o-transform: translateY(-20%);
+	}
+	main .testimonials .review:nth-child(2) {
+		transform: translateY(-10%);
+		-webkit-transform: translateY(-10%);
+		-moz-transform: translateY(-10%);
+		-ms-transform: translateY(-10%);
+		-o-transform: translateY(-10%);
+}
 }
